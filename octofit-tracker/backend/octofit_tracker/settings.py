@@ -60,13 +60,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'octofit_db',
-        'ENFORCE_SCHEMA': True,
-        'CLIENT': {
-            'host': 'localhost',
-            'port': 27017,
-            'serverSelectionTimeoutMS': 5000,
-            'connectTimeoutMS': 20000
-        }
+        'HOST': 'localhost',
+        'PORT': 27017,
     }
 }
 
@@ -94,6 +89,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -120,3 +116,5 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
+base_url = 'http://<codespace-name>-8000.app.github.dev/'
